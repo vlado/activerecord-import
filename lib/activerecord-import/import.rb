@@ -165,7 +165,7 @@ class ActiveRecord::Base
     # This returns an object which responds to +failed_instances+ and +num_inserts+.
     # * failed_instances - an array of objects that fails validation and were not committed to the database. An empty array if no validation is performed.
     # * num_inserts - the number of insert statements it took to import the data
-    def import( *args )
+    def batch_import( *args )
       options = { :validate=>true, :timestamps=>true }
       options.merge!( args.pop ) if args.last.is_a? Hash
 
